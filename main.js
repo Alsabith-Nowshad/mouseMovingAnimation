@@ -1,48 +1,66 @@
 let box1 = document.querySelector(".box1")
-let img1 = document.querySelector(".img1")
+let img1 = document.querySelectorAll(".img1")
 
 let box2 = document.querySelector(".box2")
-let img2 = document.querySelector(".img2")
+let img2 = document.querySelectorAll(".img2")
 
 let box3 = document.querySelector(".box3")
-let img3 = document.querySelector(".img3")
+let img3 = document.querySelectorAll(".img3")
+
+// img 1
+
+box1.addEventListener("mousemove",function(e){
+    coordsX = e.clientX
+    coordsY = e.clientY
+    console.log(coordsX);
+    console.log(coordsY);
+
+    animateImg1()
+})
+
+function animateImg1(){
+img1.forEach(function(img1,index){
+    img1.style.left = coordsX - 350 + "px"
+    img1.style.top = coordsY  -120 + "px"
+})
+}
 
 
-
-    box1.addEventListener("mousemove",function(){
-        img1.style.display = "block"
-        // img1.style.top = 
-        showCoords(event)
-    })
-    box1.addEventListener("mouseleave",function(){
-        img1.style.display = "none"
-    })
+// img2
 
 
+box2.addEventListener("mousemove",function(e){
+    coordsX = e.clientX
+    coordsY = e.clientY
+    console.log(coordsX);
+    console.log(coordsY);
 
-    box2.addEventListener("mousemove",function(){
-        img2.style.display = "block"
-    })
-    box2.addEventListener("mouseleave",function(){
-        img2.style.display = "none"
-    })
+    animateImg2()
+})
+
+function animateImg2(){
+img2.forEach(function(img2,index){
+    img2.style.left = coordsX - 350 + "px"
+    img2.style.top = coordsY -  470 + "px"
+})
+}
 
 
-    box3.addEventListener("mousemove",function(){
-        img3.style.display = "block"
-    })
-    box3.addEventListener("mouseleave",function(){
-        img3.style.display = "none"
-    })
+// img3
 
 
-    function showCoords(event) {
-        let cX = event.clientX;
-        let cY = event.clientY;
-        console.log(cX,cY);
-        // let sX = event.screenX;
-        // let sY = event.screenY;
-        // let coords1 = "clientX: " + cX + ", clientY: " + cY;
-        // let coords2 = "screenX: " + sX + ", screenY: " + sY;
-        // let text = coords1 + coords2;
-      }
+box3.addEventListener("mousemove",function(e){
+    coordsX = e.clientX
+    coordsY = e.clientY
+    console.log(coordsX);
+    console.log(coordsY);
+
+    animateImg3()
+})
+
+function animateImg3(){
+img3.forEach(function(img3,index){
+    img3.style.left = coordsX - 350 + "px"
+    img3.style.top = coordsY -  730 + "px"
+})
+}
